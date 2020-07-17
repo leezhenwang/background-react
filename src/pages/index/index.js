@@ -1,6 +1,6 @@
 import './index.scss'
 import React, {useState} from 'react';
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu, Breadcrumb, Divider } from 'antd';
 import {
   FundProjectionScreenOutlined,
   SnippetsOutlined,
@@ -8,12 +8,14 @@ import {
   FileAddOutlined,
   MessageOutlined
 } from '@ant-design/icons';
+import AddArticle from '../addArticle/addArticle';
+import {Route} from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
 function Index(){
-  return <Layout>
+  return <Layout className="layout-container">
     <Sider
       style={{
         overflow: 'auto',
@@ -39,12 +41,14 @@ function Index(){
     <Layout className="site-layout" style={{ marginLeft: 200 }}>
       <Header className="site-layout-background" style={{ padding: 0, background: '#fff' }} />
       <Content style={{ margin: '24px 16px 0', overflow: 'initial',background: '#fff' }}>
-        <Breadcrumb style={{ margin: '16px 0' }}>
+        <Breadcrumb style={{ margin: '16px 0',padding: '0 24px' }}>
           <Breadcrumb.Item>User</Breadcrumb.Item>
           <Breadcrumb.Item>Bill</Breadcrumb.Item>
         </Breadcrumb>
+        <Divider />
         <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-          content
+          <Route path="/index/" exact component={AddArticle} />
+          <Route path="/index/add/" exact component={AddArticle} />
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>

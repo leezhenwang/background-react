@@ -1,23 +1,9 @@
-.login-container{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 300px;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  background: #fff;
-  .login-text{
-    display: block;
-    text-align: center;
-  }
-  .ant-input-affix-wrapper{
-    margin: 10px 0;
-  }
-  .ant-btn{
-    display: block;
-    width: 100%;
-    margin: 0 auto;
+.artcile-contianer{
+  .input-container{
+    display: flex;
+    line-height: 32px;
+    .ant-input{
+      flex: 1;
+    }
   }
 }
