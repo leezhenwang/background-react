@@ -1,9 +1,11 @@
 //其余删掉
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App'
+import Main from './pages/main';
+import 'antd/dist/antd.css';
+import './common.scss'
 
 ReactDOM.render(
-  <App/>,
+  <Main/>,
   document.getElementById('root')
 );
