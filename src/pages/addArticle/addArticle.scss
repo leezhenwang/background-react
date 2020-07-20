@@ -6,4 +6,11 @@
       flex: 1;
     }
   }
+  .btn-container{
+    width: 100%;
+    text-align: center;
+    .ant-btn{
+      margin: 10px;
+    }
+  }
 }

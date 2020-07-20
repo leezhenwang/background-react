@@ -25,7 +25,7 @@ function Index(){
       }}
     >
       <div className="logo" />
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+      <Menu theme="dark" mode="inline" defaultSelectedKeys={['22']}>
         <Menu.Item key="1" icon={<FundProjectionScreenOutlined />}>
           工作台
         </Menu.Item>
