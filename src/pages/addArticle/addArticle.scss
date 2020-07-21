@@ -13,4 +13,22 @@
       margin: 10px;
     }
   }
+  .detail-show{
+    text-align: center;
+    .show-item{
+      display: inline-block;
+      margin: 0 10px;
+      color: #ccc;
+      font-size: 14px;
+    }
+  }
+  .introduce-html{
+    font-size: 16px;
+  }
+  .content-html{
+    text-indent: 2em;
+    p{
+      word-break: break-all;
+    }
+  }
 }

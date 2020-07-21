@@ -47,7 +47,6 @@ function Index(){
         </Breadcrumb>
         <Divider />
         <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
-          <Route path="/index/" exact component={AddArticle} />
           <Route path="/index/add/" exact component={AddArticle} />
         </div>
       </Content>
