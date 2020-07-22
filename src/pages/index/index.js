@@ -9,12 +9,20 @@ import {
   MessageOutlined
 } from '@ant-design/icons';
 import AddArticle from '../addArticle/addArticle';
+import ArticleList from '../articleList/articleList';
 import {Route} from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
-function Index(){
+function Index(props){
+  const handelArticleClick =(e)=>{
+    if(e.key === '21'){//文章列表
+      props.history.push("/index/articleList");
+    }else{
+      props.history.push("/index/add");
+    }
+  }
   return <Layout className="layout-container">
     <Sider
       style={{
@@ -29,7 +37,7 @@ function Index(){
         <Menu.Item key="1" icon={<FundProjectionScreenOutlined />}>
           工作台
         </Menu.Item>
-        <SubMenu key="2" icon={<SnippetsOutlined />} title="文章管理">
+        <SubMenu key="2" icon={<SnippetsOutlined />} title="文章管理" onClick={handelArticleClick}>
           <Menu.Item key="21"  icon={<ProfileOutlined />}>文章列表</Menu.Item>
           <Menu.Item key="22"  icon={<FileAddOutlined />}>添加文章</Menu.Item>
         </SubMenu>
@@ -48,6 +56,7 @@ function Index(){
         <Divider />
         <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
           <Route path="/index/add/" exact component={AddArticle} />
+          <Route path="/index/articleList/" exact component={ArticleList} />
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>

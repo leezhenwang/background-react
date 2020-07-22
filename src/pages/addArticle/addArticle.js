@@ -100,7 +100,6 @@ function AddArticle(props){
         updateTime: new Date().getTime()
       }
       console.log(paramsObj)
-      debugger
       if(props.match.path === '/index/add/' && !articleId){//添加新的文章时
         paramsObj.view_count = 0;
         axios({
