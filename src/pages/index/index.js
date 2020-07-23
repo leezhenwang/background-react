@@ -57,6 +57,7 @@ function Index(props){
         <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
           <Route path="/index/add/" exact component={AddArticle} />
           <Route path="/index/articleList/" exact component={ArticleList} />
+          <Route path="/index/edit/:id" exact component={AddArticle} />
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>

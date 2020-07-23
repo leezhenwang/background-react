@@ -5,5 +5,7 @@ const servicePath = {
   addArticle: `${ipUrl}addArticle`,//添加文章
   updateArticle: `${ipUrl}updateArticle`,//更新文章
   getArticleList: `${ipUrl}getArticleList`,//获取文章列表
+  deleteArticle: `${ipUrl}deleteArticle`,//获取文章列表
+  getArticleById: `${ipUrl}getArticleById`,//获取文章列表
 }
 export default servicePath

@@ -26,9 +26,6 @@ function AddArticle(props){
       }
     })
   }
-  useEffect(() => {
-    getTypeInfo()
-  }, [])
   const renderer = new marked.Renderer();
   marked.setOptions({
     renderer: renderer,
@@ -111,6 +108,7 @@ function AddArticle(props){
           setArticleId(res.data.insertId)
           if(res.isScuccess){
             message.success('文章保存成功')
+            props.history.push('/index/articleList/')
           }else{
             message.error('文章保存失败');
           }
@@ -123,8 +121,10 @@ function AddArticle(props){
           data: paramsObj,
           withCredentials: true
         }).then(res=>{
-          if(res.isScuccess){
+          console.log(res)
+          if(res.data.isSuccess){
             message.success('文章保存成功')
+            props.history.push('/index/articleList/')
           }else{
             message.error('文章保存失败');
           }
@@ -132,6 +132,30 @@ function AddArticle(props){
       }
     }
   }
+  //获取文章信息
+  const getArticleById=(id)=>{
+    axios({
+      method: 'get',
+      url: `${servicePath.getArticleById}?id=${id}`,
+      withCredentials: true
+    }).then((res)=>{
+      console.log(res)
+      let data= res.data.data[0]
+      setTitle(data.title)
+      setType(data.typeId)
+      setContent(data.article_content)
+      setIntroduce(data.introduce)
+      setIntroduceHtml(marked(data.introduce))
+      setContentHtml(marked(data.article_content))
+    })
+  }
+  useEffect(() => {
+    getTypeInfo()
+    if(props.match.path === '/index/edit/:id'){
+      setArticleId(props.match.params.id)
+      getArticleById(props.match.params.id)
+    }
+  }, [])
   return (
     <div className="artcile-contianer">
       <Row gutter={[20, 20]}>
