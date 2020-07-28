@@ -1,4 +1,5 @@
-let ipUrl = 'http://127.0.0.1:7001/admin/'
+// let ipUrl = 'http://127.0.0.1:7001/admin/'//本地
+let ipUrl = 'http://129.204.206.80:7001/admin/'//线上
 const servicePath = {
   checkLogin: `${ipUrl}checkLogin`, //  检查用户名密码是否正确
   getTypeInfo: `${ipUrl}getTypeInfo`,//获取文章类型
