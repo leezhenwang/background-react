@@ -9,7 +9,6 @@ import { CalendarOutlined,FireOutlined,FolderOutlined } from '@ant-design/icons'
 const { TextArea } = Input
 const { Option } = Select
 function AddArticle(props){
-  console.log(props)
   const [typeInfo,setTypeInfo] = useState([])
   const getTypeInfo =()=>{
     axios({
@@ -45,14 +44,12 @@ function AddArticle(props){
   //文章类型
   const [type,setType] = useState(undefined)
   function handleTypeChange(value) {
-    console.log(`selected ${value}`);
     setType(value)
   }
   //日期
   const [date,setDate] = useState(undefined)
   const [dateString,setDateString] = useState(undefined)
   function handleDateChange(date, dateString){
-    console.log(date, dateString);
     setDate(date)
     setDateString(dateString)
   }
@@ -96,7 +93,6 @@ function AddArticle(props){
         addTime: dateString ? (new Date(dateString).getTime()) : (new Date().getTime()),
         updateTime: new Date().getTime()
       }
-      console.log(paramsObj)
       if(props.match.path === '/index/add/' && !articleId){//添加新的文章时
         paramsObj.view_count = 0;
         axios({
@@ -106,7 +102,7 @@ function AddArticle(props){
           withCredentials: true
         }).then(res=>{
           setArticleId(res.data.insertId)
-          if(res.isScuccess){
+          if(res.data.isScuccess){
             message.success('文章保存成功')
             props.history.push('/index/articleList/')
           }else{
@@ -121,7 +117,6 @@ function AddArticle(props){
           data: paramsObj,
           withCredentials: true
         }).then(res=>{
-          console.log(res)
           if(res.data.isSuccess){
             message.success('文章保存成功')
             props.history.push('/index/articleList/')
@@ -139,7 +134,6 @@ function AddArticle(props){
       url: `${servicePath.getArticleById}?id=${id}`,
       withCredentials: true
     }).then((res)=>{
-      console.log(res)
       let data= res.data.data[0]
       setTitle(data.title)
       setType(data.typeId)

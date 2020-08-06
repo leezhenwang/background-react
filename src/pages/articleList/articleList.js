@@ -27,7 +27,6 @@ const ArticleList = (props)=>{
     getArticleList(1,pagination.pageSize)
   },[])
   const handlePageChange=(newCurrent,newPageSize)=>{
-    console.log(newCurrent,newPageSize)
     const {current,pageSize} = pagination
     let newPagination
 
