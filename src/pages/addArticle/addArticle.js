@@ -3,6 +3,7 @@ import React , {useState, useEffect} from 'react';
 import { Row, Col, Input, Select, Button, DatePicker, message} from 'antd';
 import locale from "antd/lib/date-picker/locale/zh_CN";
 import marked from "marked";
+import moment from 'moment'
 import servicePath from '../../config/apiUrl';
 import axios from 'axios'
 import { CalendarOutlined,FireOutlined,FolderOutlined } from '@ant-design/icons';
@@ -102,7 +103,7 @@ function AddArticle(props){
           withCredentials: true
         }).then(res=>{
           setArticleId(res.data.insertId)
-          if(res.data.isScuccess){
+          if(res.data.isSuccess){
             message.success('文章保存成功')
             props.history.push('/index/articleList/')
           }else{
@@ -140,6 +141,7 @@ function AddArticle(props){
       setContent(data.article_content)
       setIntroduce(data.introduce)
       setIntroduceHtml(marked(data.introduce))
+      setDate(moment(data.addTime))
       setContentHtml(marked(data.article_content))
     })
   }

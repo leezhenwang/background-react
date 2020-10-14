@@ -1,6 +1,7 @@
-let ipUrl = 'http://127.0.0.1:7001/admin/'//本地
+// let ipUrl = 'http://127.0.0.1:7001/admin/'//本地
 // let ipUrl = '/admin/'//本地代理到线上
 // let ipUrl = 'http://129.204.206.80:7001/admin/'//线上
+let ipUrl = 'http://leezhenwang.website/admin/' // 线上域名
 const servicePath = {
   checkLogin: `${ipUrl}checkLogin`, //  检查用户名密码是否正确
   getTypeInfo: `${ipUrl}getTypeInfo`,//获取文章类型
