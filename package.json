@@ -14,9 +14,10 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "md5": "^2.3.0"
   },
-  "homepage":".",
+  "homepage": ".",
   "scripts": {
     "start": "set PORT=3001 && react-scripts start",
     "build": "react-scripts build",
@@ -38,5 +39,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy":"http://129.204.206.80:7001"
+  "proxy": "http://129.204.206.80:7001"
 }

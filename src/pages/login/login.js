@@ -4,6 +4,7 @@ import { Input, Button,Spin, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import servicePath from '../../config/apiUrl';
 import axios from 'axios'
+import md5 from 'md5'
 function Login(props){
   //react hook 必须写在函数里面
   const [userName , setUserName] = useState('')
@@ -20,8 +21,9 @@ function Login(props){
     }
     let paramsObj = {
       userName,
-      password
+      password: md5(password)
     }
+
     axios({
       method:'post',
       url: servicePath.checkLogin,
